@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luxury Premium Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF0E6; /* brand-ivory */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E2A884; /* brand-tan */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CD926D; /* brand-darktan */
+}
+
+/* Custom global rules for premium interactions */
+@layer base {
+  body {
+    /* Removed select-none for accessibility. Added brand colors globally */
+    @apply font-sans overflow-x-hidden text-brand-espresso bg-brand-linen transition-colors duration-500;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Smooth transitions for theme toggle */
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 400ms;
+}
+
+/* Magnetic button micro-animations */
+.magnetic-btn {
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Swiper custom styling overrides for gold theme */
+.swiper-pagination-bullet-active {
+  background: #E2A884 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #E2A884 !important;
+}
